@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
@@ -18,14 +19,7 @@ export default function Navbar() {
         </button>
 
         {/* Font Awesome Basket Icon on the right side */}
-        <button
-          className="btn btn-outline-secondary ms-auto"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
-          aria-label="Toggle offcanvas"
-        >
+        <button className="btn btn-outline-secondary ms-auto">
           <FontAwesomeIcon icon={faBasketShopping} size="lg" />
         </button>
 
@@ -50,9 +44,9 @@ export default function Navbar() {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </Link>
               </li>
             </ul>
             <form className="d-flex mt-3" role="search">
