@@ -7,31 +7,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 main {
-  padding-top: 56px; /* Adjust as needed */
+  padding-top: 56px; /* Matches or exceeds header height */
 }
+
+section {
+  margin-bottom: 20px; /* Ensures space between sections */
+}
+
 .card-img-overlay {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers vertically */
-  align-items: center; /* Centers horizontally */
-  text-align: center; /* Centers text alignment */
-  color: white; /* Sets text color to stand out on the image */
-  background-color: rgba(0, 0, 0, 0.3); /* Optional: adds slight overlay */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
 }
+
 .fixed-overlay {
   height: 300px;
   display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Optional: Adds a semi-transparent background */
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
