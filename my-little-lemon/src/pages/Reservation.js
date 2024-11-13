@@ -2,7 +2,8 @@ import SmallSection from '../components/SmallSection';
 import Navbar from './Navbar';
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
-import { Button, Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
 
 export default function Reservation() {
@@ -40,88 +41,205 @@ export default function Reservation() {
           <SmallSection />
         </section>
         <section>
-          <div className="container text-center">
-            <div className="row">
-              <label for="basic-url" class="form-label">
-                How many guests?
-              </label>
-              <div>
-                <div class="input-group mb-3">
-                  <button
-                    className="btn btn-outline-secondary"
-                    type="button"
-                    id="button-addon1"
-                    onClick={decrement}
-                  >
-                    -
-                  </button>
-                  <input
-                    type="text"
-                    className="form-control text-center"
-                    placeholder=""
-                    aria-label="Example text with button addon"
-                    aria-describedby="button-addon1"
-                    value={guest}
-                    onChange={handleChange}
-                  />
-                  <button
-                    className="btn btn-outline-secondary"
-                    type="button"
-                    id="button-addon2"
-                    onClick={increment}
-                  >
-                    +
-                  </button>
+          <div
+            id="carouselExampleDark"
+            className="carousel carousel-dark slide"
+          >
+            <div className="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to="0"
+                className="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+            </div>
+            <div className="carousel-inner">
+              {/* First Slide: Guest Input */}
+              <div className="carousel-item active" data-bs-interval="10000">
+                <div className="container text-center py-5">
+                  <div className="row justify-content-center">
+                    <div className="col-10 col-md-6">
+                      <label htmlFor="basic-url" className="form-label">
+                        How many guests?
+                      </label>
+                      <div className="input-group mb-3">
+                        <button
+                          className="btn btn-outline-secondary"
+                          type="button"
+                          id="button-addon1"
+                          onClick={decrement}
+                        >
+                          -
+                        </button>
+                        <input
+                          type="text"
+                          className="form-control text-center"
+                          aria-label="Guest count"
+                          aria-describedby="button-addon1"
+                          value={guest}
+                          onChange={handleChange}
+                        />
+                        <button
+                          className="btn btn-outline-secondary"
+                          type="button"
+                          id="button-addon2"
+                          onClick={increment}
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Second Slide: Date Picker */}
+              <div className="carousel-item" data-bs-interval="2000">
+                <div className="container text-center py-5">
+                  <div className="row justify-content-center">
+                    <div className="col-10 col-md-6">
+                      <label htmlFor="basic-url" className="form-label">
+                        Select a Date
+                      </label>
+                      <div className="d-flex justify-content-center mt-3">
+                        <DatePicker
+                          selected={selectedDate}
+                          onChange={(date) => setSelectedDate(date)}
+                          placeholderText="Select a date"
+                          dateFormat="MMMM d, yyyy"
+                          minDate={new Date()}
+                          className="form-control"
+                          inline
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Third Slide: Time Selection Buttons */}
+              <div className="carousel-item">
+                <div className="container text-center py-5">
+                  <div className="row justify-content-center">
+                    <div className="col-10 col-md-6">
+                      <label htmlFor="basic-url" className="form-label">
+                        Select available hour
+                      </label>
+                      <div className="d-flex flex-wrap justify-content-center mt-3">
+                        {generateTimeButtons().map((time) => (
+                          <Button
+                            key={time}
+                            className="m-2"
+                            variant={
+                              time === selectedTime
+                                ? 'primary'
+                                : 'outline-primary'
+                            }
+                            onClick={() => handleTimeClick(time)}
+                          >
+                            {time}
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Fourth Slide */}
+              <div className="carousel-item">
+                <div className="container text-center py-5">
+                  <div className="row justify-content-center">
+                    <div className="col-10 col-md-6">
+                      <h2>Your booking!</h2>
+                      <div className="d-flex flex-column align-items-center mt-3">
+                        <div>
+                          <p>
+                            Number of guests:{' '}
+                            {!guest ? 'Please enter number of guests' : guest}
+                          </p>
+                        </div>
+                        <div>
+                          <p>
+                            Selected date is:{' '}
+                            {selectedDate
+                              ? selectedDate.toLocaleDateString()
+                              : 'Not selected'}
+                          </p>
+                        </div>
+
+                        <div>
+                          <p>
+                            Selected available hour is:{' '}
+                            {!selectedTime ? 'Not selected' : selectedTime}
+                          </p>
+                        </div>
+                      </div>
+                      <div>
+                        {guest && selectedDate && selectedTime ? (
+                          <Button>
+                            <Link
+                              className="nav-link active"
+                              aria-current="page"
+                              to="/form"
+                            >
+                              Confirm
+                            </Link>{' '}
+                          </Button>
+                        ) : (
+                          <Button disabled>Confirm </Button>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="row">
-              <label for="basic-url" class="form-label">
-                Select a Date{' '}
-              </label>
-              <div className="container text-center mt-5">
-                <DatePicker
-                  selected={selectedDate}
-                  onChange={(date) => setSelectedDate(date)}
-                  placeholderText="Select a date"
-                  dateFormat="MMMM d, yyyy" // Custom date format
-                  minDate={new Date()} // Prevents selection of past dates
-                  className="form-control" // Bootstrap styling
-                  inline
-                />
-                {/*
-                {selectedDate && (
-                  <p className="mt-3">
-                    Selected Date: {selectedDate.toLocaleDateString()}
-                  </p>
-                )}
-                */}
-              </div>
-            </div>
-            <div className="row">
-              <label for="basic-url" class="form-label">
-                Select available hour
-              </label>
-              <Container className="text-center">
-                <div className="d-flex flex-wrap justify-content-center">
-                  {generateTimeButtons().map((time) => (
-                    <Button
-                      key={time}
-                      className="m-2"
-                      variant={
-                        time === selectedTime ? 'primary' : 'outline-primary'
-                      }
-                      onClick={() => handleTimeClick(time)}
-                    >
-                      {time}
-                    </Button>
-                  ))}
-                </div>
-                {/*{selectedTime && (
-                  <p className="mt-3">Selected Time: {selectedTime}</p>
-                )}*/}
-              </Container>
-            </div>
+
+            {/* Carousel Navigation Controls */}
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Next</span>
+            </button>
           </div>
         </section>
       </main>
