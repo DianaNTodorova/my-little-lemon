@@ -9,7 +9,7 @@ export default function NavigateButton({ to, label }) {
   };
 
   return (
-    <button className="btn btn-primary" onClick={handleClick}>
+    <button className="main-button" onClick={handleClick}>
       {label}
     </button>
   );

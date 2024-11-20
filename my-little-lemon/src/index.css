@@ -51,3 +51,45 @@ section {
   right: -8px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
+
+/* button */
+.main-button {
+  background-color: #f4ce14; /* Bright yellow background */
+  color: #fff; /* White text */
+  border: none; /* No border */
+  border-radius: 25px; /* Rounded corners */
+  padding: 12px 20px; /* Padding for size */
+  width: 180px; /* Wider button */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+  position: relative; /* For hover effects */
+  overflow: hidden; /* Hide hover effect overflow */
+}
+
+.main-button::before {
+  content: ''; /* Create hover effect overlay */
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start from the left outside the button */
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent white overlay */
+  z-index: 0; /* Place below text */
+  transition: left 0.5s ease; /* Smooth slide-in effect */
+}
+
+.main-button:hover::before {
+  left: 0; /* Slide overlay to cover the button */
+}
+
+.main-button:hover {
+  background-color: #eabf00; /* Slightly darker yellow */
+  color: #004225; /* Change text color to dark green */
+}
+
+.main-button:active {
+  background-color: #d4a500; /* Even darker yellow on click */
+}

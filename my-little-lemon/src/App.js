@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Reservation from './pages/Reservation';
 import Form from './pages/Form';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import Confirmation from './pages/Confirmation';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/reservation" element={<Reservation />} />
       <Route path="/form" element={<Form />} />
+      <Route path="/confirmation" element={<Confirmation />} />
     </Routes>
   );
 }

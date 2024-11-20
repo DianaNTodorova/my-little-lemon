@@ -1,14 +1,15 @@
 import SmallSection from '../components/SmallSection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChampagneGlasses } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
 import { faPlateWheat } from '@fortawesome/free-solid-svg-icons';
 import Navbar from './Navbar';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
 
 export default function Form() {
+  const navigate = useNavigate();
   return (
     <>
       <header>
@@ -91,6 +92,20 @@ export default function Form() {
                 <option value="3">Gluten-free</option>
               </select>
             </div>
+            <label for="exampleFormControlTextarea1" className="form-label">
+              Occasions:
+            </label>
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupSelect01">
+                <FontAwesomeIcon icon={faChampagneGlasses} />
+              </label>
+              <select class="form-select" id="inputGroupSelect01">
+                <option selected>Select...</option>
+                <option value="1">Birthday Party</option>
+                <option value="2">Business Dinner</option>
+                <option value="3">Anniversary</option>
+              </select>
+            </div>
             <div className="mb-3">
               <label for="exampleFormControlTextarea1" className="form-label">
                 Special requests:
@@ -101,7 +116,13 @@ export default function Form() {
                 rows="3"
               ></textarea>
             </div>
-            <Button>Confirm reservation</Button>
+            <button
+              className="main-button"
+              onClick={() => navigate('/confirmation')}
+            >
+              {' '}
+              Finish reservation
+            </button>
           </div>
         </div>
       </div>

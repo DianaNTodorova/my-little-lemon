@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import logo from '../images/The Little Lemon logo.png';
 
 export default function Navbar() {
   return (
     <nav className="navbar bg-body-tertiary fixed-top">
-      <div className="container-fluid">
+      <div className="container-fluid d-flex align-items-center justify-content-between">
         {/* Left-aligned hamburger toggle */}
         <button
           className="navbar-toggler"
@@ -18,8 +19,18 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
+        {/* Centered logo */}
+        <div className="navbar-brand mx-auto">
+          <img
+            src={logo}
+            alt="Little Lemon Logo"
+            className="img-fluid"
+            style={{ height: '80px' }}
+          />
+        </div>
+
         {/* Font Awesome Basket Icon on the right side */}
-        <button className="btn btn-outline-secondary ms-auto">
+        <button className="btn btn-outline-secondary">
           <FontAwesomeIcon icon={faBasketShopping} size="lg" />
         </button>
 
@@ -32,7 +43,14 @@ export default function Navbar() {
         >
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-              Offcanvas
+              <div className=" mx-auto">
+                <img
+                  src={logo}
+                  alt="Little Lemon Logo"
+                  className="img-fluid"
+                  style={{ height: '80px' }}
+                />
+              </div>
             </h5>
             <button
               type="button"
@@ -56,7 +74,10 @@ export default function Navbar() {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button
+                className="btn btn-outline-success main-button"
+                type="submit"
+              >
                 Search
               </button>
             </form>

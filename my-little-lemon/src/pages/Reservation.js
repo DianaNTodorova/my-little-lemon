@@ -4,12 +4,14 @@ import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
 
 export default function Reservation() {
   const [selectedTime, setSelectedTime] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [guest, setGuest] = useState(1);
+  const navigate = useNavigate();
   const increment = () => setGuest(guest < 30 ? guest + 1 : 1);
   const decrement = () => setGuest(guest > 1 ? guest - 1 : 1);
   function handleChange(e) {
@@ -84,7 +86,7 @@ export default function Reservation() {
                       </label>
                       <div className="input-group mb-3">
                         <button
-                          className="btn btn-outline-secondary"
+                          className="btn btn-outline-secondary "
                           type="button"
                           id="button-addon1"
                           onClick={decrement}
@@ -195,19 +197,21 @@ export default function Reservation() {
                         </div>
                       </div>
                       <div>
-                        {guest && selectedDate && selectedTime ? (
-                          <Button>
-                            <Link
-                              className="nav-link active"
-                              aria-current="page"
-                              to="/form"
+                        <div>
+                          {guest && selectedDate && selectedTime ? (
+                            <button
+                              className="main-button"
+                              onClick={() => navigate('/form')}
                             >
+                              {' '}
                               Confirm
-                            </Link>{' '}
-                          </Button>
-                        ) : (
-                          <Button disabled>Confirm </Button>
-                        )}
+                            </button>
+                          ) : (
+                            <button className="main-button disabled" disabled>
+                              Confirm
+                            </button>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
