@@ -1,4 +1,4 @@
-import backgroundLemon from '../images/background_lemon.png';
+import backgroundLemon from '../images/background_lemon.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigateButton from '../components/Button';
 

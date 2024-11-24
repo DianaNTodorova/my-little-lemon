@@ -19,14 +19,15 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: start;
+  text-align: start;
   color: white;
+  width: 35rem;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
 .fixed-overlay {
-  height: 300px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +35,7 @@ section {
   overflow: hidden;
 }
 .carousel-item {
-  min-height: 400px;
+  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;

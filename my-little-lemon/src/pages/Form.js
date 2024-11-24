@@ -5,11 +5,57 @@ import { useNavigate } from 'react-router-dom';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
 import { faPlateWheat } from '@fortawesome/free-solid-svg-icons';
-import Navbar from './Navbar';
 import 'react-datepicker/dist/react-datepicker.css';
+import React, { useState } from 'react';
+import Navbar from './Navbar';
 
 export default function Form() {
   const navigate = useNavigate();
+
+  // State management for form inputs
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    mealPreference: '',
+    occasion: '',
+    specialRequests: '',
+  });
+
+  const [errors, setErrors] = useState({});
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Validate form
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.firstName) newErrors.firstName = 'First name is required.';
+    if (!formData.lastName) newErrors.lastName = 'Last name is required.';
+    if (!formData.email) newErrors.email = 'Email is required.';
+    else if (!/\S+@\S+\.\S+/.test(formData.email))
+      newErrors.email = 'Email is invalid.';
+    return newErrors;
+  };
+
+  // Handle form submission
+  const handleSubmit = () => {
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+    } else {
+      setErrors({});
+      // Navigate to confirmation page with form data (optional)
+      navigate('/confirmation', { state: { formData } });
+    }
+  };
+
   return (
     <>
       <header>
@@ -23,10 +69,7 @@ export default function Form() {
       <div className="container text-start">
         <div className="row justify-content-center">
           <div className="col col-4 mt-5">
-            <label
-              for="exampleFormControlInput1"
-              className="form-label label-text "
-            >
+            <label className="form-label label-text">
               First Name:{' '}
               <FontAwesomeIcon icon={faAsterisk} className="icon-top-corner" />
             </label>
@@ -36,15 +79,17 @@ export default function Form() {
               </span>
               <input
                 type="text"
-                class="form-control"
-                aria-label="Name"
-                aria-describedby="basic-addon1"
+                className="form-control"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
               />
             </div>
-            <label
-              for="exampleFormControlInput1"
-              className="form-label label-text"
-            >
+            {errors.firstName && (
+              <p className="text-danger">{errors.firstName}</p>
+            )}
+
+            <label className="form-label label-text">
               Last Name:{' '}
               <FontAwesomeIcon icon={faAsterisk} className="icon-top-corner" />
             </label>
@@ -54,15 +99,17 @@ export default function Form() {
               </span>
               <input
                 type="text"
-                class="form-control"
-                aria-label="Name"
-                aria-describedby="basic-addon1"
+                className="form-control"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
               />
             </div>
-            <label
-              for="exampleFormControlInput1"
-              className="form-label label-text"
-            >
+            {errors.lastName && (
+              <p className="text-danger">{errors.lastName}</p>
+            )}
+
+            <label className="form-label label-text">
               Email address:{' '}
               <FontAwesomeIcon icon={faAsterisk} className="icon-top-corner" />
             </label>
@@ -73,54 +120,63 @@ export default function Form() {
               <input
                 type="text"
                 className="form-control"
+                name="email"
                 placeholder="youremail@gmail.com"
-                aria-label="Email"
-                aria-describedby="basic-addon1"
+                value={formData.email}
+                onChange={handleChange}
               />
             </div>
-            <label for="exampleFormControlTextarea1" className="form-label">
-              Meal preferences:
-            </label>
-            <div class="input-group mb-3">
-              <label class="input-group-text" for="inputGroupSelect01">
+            {errors.email && <p className="text-danger">{errors.email} </p>}
+
+            <label className="form-label">Meal preferences:</label>
+            <div className="input-group mb-3">
+              <label className="input-group-text" htmlFor="mealPreference">
                 <FontAwesomeIcon icon={faPlateWheat} />
               </label>
-              <select class="form-select" id="inputGroupSelect01">
-                <option selected>Select...</option>
-                <option value="1">Vegetarian</option>
-                <option value="2">Vegan</option>
-                <option value="3">Gluten-free</option>
+              <select
+                className="form-select"
+                id="mealPreference"
+                name="mealPreference"
+                value={formData.mealPreference}
+                onChange={handleChange}
+              >
+                <option value="">Select...</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Gluten-free">Gluten-free</option>
               </select>
             </div>
-            <label for="exampleFormControlTextarea1" className="form-label">
-              Occasions:
-            </label>
-            <div class="input-group mb-3">
-              <label class="input-group-text" for="inputGroupSelect01">
+
+            <label className="form-label">Occasions:</label>
+            <div className="input-group mb-3">
+              <label className="input-group-text" htmlFor="occasion">
                 <FontAwesomeIcon icon={faChampagneGlasses} />
               </label>
-              <select class="form-select" id="inputGroupSelect01">
-                <option selected>Select...</option>
-                <option value="1">Birthday Party</option>
-                <option value="2">Business Dinner</option>
-                <option value="3">Anniversary</option>
+              <select
+                className="form-select"
+                id="occasion"
+                name="occasion"
+                value={formData.occasion}
+                onChange={handleChange}
+              >
+                <option value="">Select...</option>
+                <option value="Birthday Party">Birthday Party</option>
+                <option value="Business Dinner">Business Dinner</option>
+                <option value="Anniversary">Anniversary</option>
               </select>
             </div>
-            <div className="mb-3">
-              <label for="exampleFormControlTextarea1" className="form-label">
-                Special requests:
-              </label>
-              <textarea
-                className="form-control"
-                id="exampleFormControlTextarea1"
-                rows="3"
-              ></textarea>
-            </div>
-            <button
-              className="main-button"
-              onClick={() => navigate('/confirmation')}
-            >
-              {' '}
+
+            <label className="form-label">Special requests:</label>
+            <textarea
+              className="form-control"
+              id="specialRequests"
+              name="specialRequests"
+              rows="3"
+              value={formData.specialRequests}
+              onChange={handleChange}
+            ></textarea>
+
+            <button className="main-button mt-3" onClick={handleSubmit}>
               Finish reservation
             </button>
           </div>

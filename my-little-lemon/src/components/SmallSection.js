@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import backgroundLemon from '../images/background_lemon.png';
+import backgroundLemon from '../images/background_lemon.jpg';
 
 export default function SmallSection() {
   return (
