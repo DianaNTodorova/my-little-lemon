@@ -1,8 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0 !important;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,7 +19,23 @@ main {
 section {
   margin-bottom: 20px; /* Ensures space between sections */
 }
-
+.section-main {
+  background-image: url('./images/background-section.jpg'); /* Path to your image */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 400px; /* Fixed height */
+  margin-bottom: 20px; /* Adds space below the section */
+  display: flex; /* Optional: For content alignment */
+  align-items: center; /* Optional: Centers content vertically */
+  justify-content: start; /* Optional: Centers content horizontally */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); /* Optional: Text readability */
+}
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1050; /* Higher value ensures it stays above */
+}
 .card-img-overlay {
   display: flex;
   flex-direction: column;
@@ -35,7 +56,7 @@ section {
   overflow: hidden;
 }
 .carousel-item {
-  min-height: 300px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,9 +76,9 @@ section {
 
 /* button */
 .main-button {
-  background-color: #f4ce14; /* Bright yellow background */
-  color: #fff; /* White text */
-  border: none; /* No border */
+  background-color: #f4ce14 !important; /* Bright yellow background */
+  color: #fff !important; /* White text */
+  border: none !important; /* No border */
   border-radius: 25px; /* Rounded corners */
   padding: 12px 20px; /* Padding for size */
   width: 180px; /* Wider button */
@@ -93,4 +114,88 @@ section {
 
 .main-button:active {
   background-color: #d4a500; /* Even darker yellow on click */
+}
+/* section two */
+
+.section-two {
+  margin-top: 5rem;
+}
+
+/* small-section */
+
+.style-h5 {
+  color: white !important; /* Text color */
+  font-size: 3.5rem; /* Adjust font size */
+  font-weight: bold; /* Make the text bold */
+  margin-left: 20px; /* Left margin */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add a subtle shadow for better readability */
+}
+
+.style-p {
+  color: white; /* Text color */
+  font-size: 3rem; /* Adjust font size */
+  line-height: 1.6; /* Better line spacing for readability */
+  margin-left: 20px; /* Left margin */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+.card-small {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* New Button - Circular Button with Hover and Click Effects */
+.circular-button {
+  background-color: #f4ce14 !important; /* Bright yellow background */
+  color: #fff; /* White text */
+  border: none !important; /* No border */
+  border-radius: 50% !important; /* Perfectly round button */
+  padding: 20px; /* Circular size */
+  width: 60px !important; /* Button size */
+  height: 60px !important; /* Button size */
+  font-size: 20px; /* Font size for icon or text */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+  position: relative; /* For hover effects */
+  overflow: hidden; /* Hide hover effect overflow */
+}
+
+/* Hover Effect for Circular Button */
+.circular-button:hover {
+  background-color: #eabf00; /* Slightly darker yellow */
+  color: white; /* White text */
+  transform: scale(1.1); /* Slightly scale the button on hover */
+}
+
+/* Active (Click) Effect for Circular Button */
+.circular-button:active {
+  background-color: #495e57 !important; /* Even darker green on click */
+  transform: scale(1.15); /* Slightly shrink the button when clicked */
+}
+
+/* Focus State to maintain color and scale after click */
+.circular-button:focus {
+  background-color: #495e57 !important; /* Keep the button green after click */
+  transform: scale(1.15); /* Keep the button slightly shrunk after click */
+  outline: none; /* Remove the default focus outline */
+}
+
+/* Button Overlay for hover effect */
+.circular-button::before {
+  content: ''; /* Create hover effect overlay */
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start from the left outside the button */
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent white overlay */
+  z-index: 0; /* Place below text */
+  transition: left 0.5s ease; /* Smooth slide-in effect */
+}
+
+/* Hover state for overlay */
+.circular-button:hover::before {
+  left: 0; /* Slide overlay to cover the button */
 }

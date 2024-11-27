@@ -38,8 +38,8 @@ export default function Reservation() {
       <header>
         <Navbar />
       </header>
-      <main>
-        <section>
+      <main className="mt-5">
+        <section className="section-main">
           <SmallSection />
         </section>
         <section>
@@ -77,8 +77,8 @@ export default function Reservation() {
             </div>
             <div className="carousel-inner">
               {/* First Slide: Guest Input */}
-              <div className="carousel-item active" data-bs-interval="10000">
-                <div className="container text-center py-5">
+              <div className="carousel-item active " data-bs-interval="10000">
+                <div className="container text-center  py-5">
                   <div className="row justify-content-center">
                     <div className="col-10 col-md-6">
                       <label htmlFor="basic-url" className="form-label">
@@ -116,7 +116,7 @@ export default function Reservation() {
               </div>
 
               {/* Second Slide: Date Picker */}
-              <div className="carousel-item" data-bs-interval="2000">
+              <div className="carousel-item w-5" data-bs-interval="2000">
                 <div className="container text-center py-5">
                   <div className="row justify-content-center">
                     <div className="col-10 col-md-6">
@@ -151,12 +151,7 @@ export default function Reservation() {
                         {generateTimeButtons().map((time) => (
                           <Button
                             key={time}
-                            className="m-2"
-                            variant={
-                              time === selectedTime
-                                ? 'primary'
-                                : 'outline-primary'
-                            }
+                            className="circular-button m-1 "
                             onClick={() => handleTimeClick(time)}
                           >
                             {time}

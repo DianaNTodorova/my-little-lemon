@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 import logo from '../images/The Little Lemon logo.png';
+import { Link } from 'react-router-dom'; // Import Link for page navigation
 
-export default function Navbar() {
+export default function Navbar({ onMenuClick }) {
   return (
     <nav className="navbar bg-body-tertiary fixed-top">
       <div className="container-fluid d-flex align-items-center justify-content-between">
@@ -43,7 +43,7 @@ export default function Navbar() {
         >
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-              <div className=" mx-auto">
+              <div className="mx-auto">
                 <img
                   src={logo}
                   alt="Little Lemon Logo"
@@ -61,12 +61,37 @@ export default function Navbar() {
           </div>
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+              {/* Use Link for navigation */}
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
+                <Link className="nav-link active" to="/">
                   Home
                 </Link>
               </li>
+              <li>
+                <Link className="nav-link active" to="/about">
+                  About
+                </Link>
+              </li>
+              <li>
+                <button
+                  className="nav-link active btn btn-link"
+                  onClick={onMenuClick}
+                >
+                  Menu
+                </button>
+              </li>
+              <li>
+                <Link className="nav-link active" to="/login">
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-link active" to="/signin">
+                  Sign In
+                </Link>
+              </li>
             </ul>
+
             <form className="d-flex mt-3" role="search">
               <input
                 className="form-control me-2"
