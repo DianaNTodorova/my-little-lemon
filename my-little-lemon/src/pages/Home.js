@@ -2,6 +2,7 @@ import Navbar from './Navbar';
 import Section from './Section';
 import SectionTwo from './SectionTwo';
 import { useRef } from 'react';
+import Footer from './Footer';
 
 export default function Home() {
   const sectionTwoRef = useRef(null);
@@ -18,6 +19,7 @@ export default function Home() {
         <Section />
         <SectionTwo ref={sectionTwoRef} id="sectiontwo" />
       </main>
+      <Footer />
     </>
   );
 }

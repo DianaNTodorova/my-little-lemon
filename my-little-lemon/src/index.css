@@ -14,11 +14,13 @@ body {
 
 main {
   padding-top: 56px; /* Matches or exceeds header height */
+  margin-top: 0;
 }
 
 section {
-  margin-bottom: 20px; /* Ensures space between sections */
+  margin-top: 10px; /* Ensures space between sections */
 }
+
 .section-main {
   background-image: url('./images/background-section.jpg'); /* Path to your image */
   background-size: cover; /* Ensures the image covers the entire section */
@@ -30,11 +32,14 @@ section {
   align-items: center; /* Optional: Centers content vertically */
   justify-content: start; /* Optional: Centers content horizontally */
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7); /* Optional: Text readability */
+  margin-bottom: 40px;
 }
 header {
   position: fixed;
   top: 0;
-  z-index: 1050; /* Higher value ensures it stays above */
+  width: 100%;
+  z-index: 1050;
+  margin: 0;
 }
 .card-img-overlay {
   display: flex;
@@ -123,25 +128,32 @@ header {
 
 /* small-section */
 
+/* Updated .style-h5 */
 .style-h5 {
-  color: white !important; /* Text color */
-  font-size: 3.5rem; /* Adjust font size */
-  font-weight: bold; /* Make the text bold */
+  color: white !important; /* White text color */
+  font-size: 3.5rem !important; /* Adjust the font size */
+  font-weight: bold !important; /* Bold text */
   margin-left: 20px; /* Left margin */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add a subtle shadow for better readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow for readability */
+  margin-bottom: 0; /* Remove any bottom margin that might cause extra space */
 }
 
+/* Updated .style-p */
 .style-p {
-  color: white; /* Text color */
-  font-size: 3rem; /* Adjust font size */
-  line-height: 1.6; /* Better line spacing for readability */
+  color: white !important; /* White text color */
+  font-size: 3rem !important; /* Adjust the font size */
+  line-height: 1.6 !important; /* Better line spacing for readability */
   margin-left: 20px; /* Left margin */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for readability */
+  margin-bottom: 0; /* Remove any bottom margin */
 }
 
 .card-small {
-  background-color: transparent !important;
+  z-index: 1; /* Ensure the section is positioned correctly in the layout */
   border: none !important;
+  border-radius: none !important;
+  color: none !important;
+  background-color: none !important;
 }
 
 /* New Button - Circular Button with Hover and Click Effects */
@@ -198,4 +210,97 @@ header {
 /* Hover state for overlay */
 .circular-button:hover::before {
   left: 0; /* Slide overlay to cover the button */
+}
+/* Custom Input Field */
+.custom-input {
+  background-color: #fff7d925 !important; /* Light yellow background to complement the buttons */
+  color: #495e57 !important; /* White text */
+  border: 2px solid #f4ce14 !important; /* Yellow border to match the buttons */
+  border-radius: 15px; /* Slightly rounded corners */
+  font-size: 16px; /* Readable font size */
+  font-weight: bold; /* Bold text for visibility */
+  text-align: center; /* Center-align text */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease !important; /* Smooth hover/click effects */
+}
+
+/* Focused Input State */
+.custom-input:focus {
+  background-color: #fdf3c1; /* Slightly darker yellow on focus */
+  color: #495e57 !important; /* Darker text for contrast */
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 5px #f4ce14 !important; /* Yellow glow effect */
+}
+
+/* Disabled Input State */
+.custom-input:disabled {
+  background-color: #f5e9b9; /* Muted yellow for disabled state */
+  color: #ccc; /* Light gray text */
+  cursor: not-allowed; /* Indicate non-editable */
+}
+
+/* Resetting and Styling the DatePicker Container */
+.custom-datepicker {
+  background-color: #fdf5d4 !important; /* Light yellow background */
+  border: 2px solid #f4ce14 !important; /* Yellow border */
+  border-radius: 15px !important; /* Rounded corners */
+  padding: 10px !important; /* Inner spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+  color: #000 !important; /* Black text for visibility */
+  border-radius: 50% !important;
+}
+
+.react-datepicker {
+  font-family: inherit !important; /* Match the site's font */
+  border: none !important; /* Remove border */
+  background: none !important; /* Remove default background */
+}
+
+/* Hover Effect */
+.react-datepicker__day:hover {
+  background-color: #eabf00 !important; /* Slightly darker yellow */
+}
+/* Passed Dates */
+.date-past {
+  background-color: #d3d3d3 !important; /* Gray background */
+  color: #888 !important; /* Dimmed text */
+  pointer-events: none !important; /* Disable interaction */
+  color: rgb(255, 255, 255) !important; /* Black text */
+  border-radius: 50% !important;
+}
+/* Upcoming Dates */
+.date-upcoming {
+  background-color: #f4ce14 !important; /* Bright yellow background */
+  color: rgb(255, 255, 255) !important; /* Black text */
+  border-radius: 50% !important;
+}
+
+/* Selected Date */
+.react-datepicker__day--selected {
+  background-color: #495e57 !important; /* Green background */
+  color: white !important; /* White text */
+  transform: scale(1.25) !important; /* Slight zoom effect */
+}
+/* Disable Default Bootstrap Input Styles */
+.react-datepicker__input-container input {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 10px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  font-size: 16px !important;
+}
+
+/* Add Extra Spacing for Aesthetic */
+.react-datepicker__header {
+  border: none !important;
+  background: transparent !important; /* Match the overall design */
+  margin-bottom: 10px !important;
+  font-weight: bold !important;
+  color: #495e57 !important; /* Match the green theme */
+}
+.react-datepicker__current-month {
+  font-size: 18px !important;
+  font-weight: bold !important;
+  color: #495e57 !important; /* Match the green theme */
+  margin-bottom: 15px !important;
 }

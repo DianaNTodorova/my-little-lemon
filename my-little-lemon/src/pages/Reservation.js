@@ -3,7 +3,6 @@ import Navbar from './Navbar';
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -18,6 +17,16 @@ export default function Reservation() {
     const newValue = parseInt(e.target.value, 10);
     setGuest(isNaN(newValue) ? 1 && guest < 30 : newValue);
   }
+
+  const getDateClass = (date) => {
+    const today = new Date();
+    if (date < today) {
+      return 'date-past';
+    } else {
+      return 'date-upcoming';
+    }
+  };
+
   const generateTimeButtons = () => {
     const times = [];
     const startHour = 12;
@@ -30,18 +39,18 @@ export default function Reservation() {
   };
 
   const handleTimeClick = (time) => {
-    setSelectedTime(time); // Set the selected time
-    console.log('Selected time:', time); // Optionally handle further actions
+    setSelectedTime(time);
+    console.log('Selected time:', time);
   };
+
   return (
     <>
       <header>
         <Navbar />
       </header>
       <main className="mt-5">
-        <section className="section-main">
-          <SmallSection />
-        </section>
+        <SmallSection />
+
         <section>
           <div
             id="carouselExampleDark"
@@ -78,34 +87,39 @@ export default function Reservation() {
             <div className="carousel-inner">
               {/* First Slide: Guest Input */}
               <div className="carousel-item active " data-bs-interval="10000">
-                <div className="container text-center  py-5">
+                <div className="container text-center py-5">
                   <div className="row justify-content-center">
-                    <div className="col-10 col-md-6">
+                    <div className="col-10 col-md-4">
                       <label htmlFor="basic-url" className="form-label">
                         How many guests?
                       </label>
-                      <div className="input-group mb-3">
+                      <div className="input-group mb-3 mt-5">
                         <button
-                          className="btn btn-outline-secondary "
+                          className="btn main-button"
                           type="button"
                           id="button-addon1"
                           onClick={decrement}
+                          style={{ width: '60px' }}
                         >
                           -
                         </button>
+
                         <input
                           type="text"
-                          className="form-control text-center"
+                          className="form-control custom-input text-center"
                           aria-label="Guest count"
                           aria-describedby="button-addon1"
                           value={guest}
                           onChange={handleChange}
+                          placeholder="Guests"
                         />
+
                         <button
-                          className="btn btn-outline-secondary"
+                          className="btn main-button"
                           type="button"
                           id="button-addon2"
                           onClick={increment}
+                          style={{ width: '60px' }}
                         >
                           +
                         </button>
@@ -116,13 +130,10 @@ export default function Reservation() {
               </div>
 
               {/* Second Slide: Date Picker */}
-              <div className="carousel-item w-5" data-bs-interval="2000">
+              <div className="carousel-item" data-bs-interval="2000">
                 <div className="container text-center py-5">
                   <div className="row justify-content-center">
                     <div className="col-10 col-md-6">
-                      <label htmlFor="basic-url" className="form-label">
-                        Select a Date
-                      </label>
                       <div className="d-flex justify-content-center mt-3">
                         <DatePicker
                           selected={selectedDate}
@@ -130,8 +141,9 @@ export default function Reservation() {
                           placeholderText="Select a date"
                           dateFormat="MMMM d, yyyy"
                           minDate={new Date()}
-                          className="form-control"
+                          className="form-control custom-datepicker"
                           inline
+                          dayClassName={(date) => getDateClass(date)}
                         />
                       </div>
                     </div>
@@ -147,11 +159,11 @@ export default function Reservation() {
                       <label htmlFor="basic-url" className="form-label">
                         Select available hour
                       </label>
-                      <div className="d-flex flex-wrap justify-content-center mt-3">
+                      <div className="d-flex flex-wrap justify-content-center mt-3 gap-2">
                         {generateTimeButtons().map((time) => (
                           <Button
                             key={time}
-                            className="circular-button m-1 "
+                            className="circular-button"
                             onClick={() => handleTimeClick(time)}
                           >
                             {time}

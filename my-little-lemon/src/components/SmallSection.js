@@ -1,14 +1,19 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import backgroundLemon from '../images/background_lemon.jpg';
+import backgroundLemon from '../images/background-section.jpg';
 
 export default function SmallSection() {
   return (
-    <div>
-      <div className="card card-small">
-        <h5 className="card-title style-h5">Little Lemon </h5>
-        <p className="card-text style-p">Reserve table</p>
-        <p className="card-text"></p>
-      </div>
+    <div
+      className="card card-small justify-content-center"
+      style={{
+        backgroundImage: `url(${backgroundLemon})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '300px',
+      }}
+    >
+      <h5 className="card-title style-h5">Little Lemon</h5>
+      <p className="card-text style-p">Reserve table</p>
+      <p className="card-text"></p>
     </div>
   );
 }
