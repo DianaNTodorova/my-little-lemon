@@ -2,7 +2,7 @@
   "name": "my-little-lemon",
   "version": "0.1.0",
   "private": true,
-  "homepage": " https://dianantodorova.github.io/my-little-lemon/",
+  "homepage": "https://dianantodorova.github.io/my-little-lemon/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
