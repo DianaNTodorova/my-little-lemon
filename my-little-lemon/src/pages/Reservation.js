@@ -5,6 +5,7 @@ import DatePicker from 'react-datepicker';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export default function Reservation() {
   const [selectedTime, setSelectedTime] = useState(null);

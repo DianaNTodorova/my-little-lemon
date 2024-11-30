@@ -8,8 +8,11 @@ export default function Home() {
   const sectionTwoRef = useRef(null);
 
   const scrollToSectionTwo = () => {
-    sectionTwoRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (sectionTwoRef.current) {
+      sectionTwoRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
+
   return (
     <>
       <header>
