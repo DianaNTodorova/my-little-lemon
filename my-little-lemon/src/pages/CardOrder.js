@@ -1,6 +1,11 @@
 import { Button } from 'react-bootstrap';
+import { useOrder } from './OrderContext';
 
 export default function CardOrder({ data }) {
+  const { addToCart } = useOrder();
+  const handleOrder = (data) => {
+    addToCart(data);
+  };
   return (
     <div className="card mb-3" style={{ maxWidth: '45%', margin: 'auto' }}>
       <div className="row g-0">
@@ -24,7 +29,9 @@ export default function CardOrder({ data }) {
         </div>
       </div>
       {/* Change: Added w-100 for button width */}
-      <Button className="main-button w-100">Order</Button>
+      <Button className="main-button w-100" onClick={() => handleOrder(data)}>
+        Order
+      </Button>
     </div>
   );
 }

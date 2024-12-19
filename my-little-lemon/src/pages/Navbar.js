@@ -1,13 +1,20 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import logo from '../images/The Little Lemon logo.png';
-import { Link } from 'react-router-dom'; // Import Link for page navigation
+import { Link, useNavigate } from 'react-router-dom'; // Import Link for page navigation
+import { useOrder } from './OrderContext';
 
 export default function Navbar({ onMenuClick }) {
+  const navigate = useNavigate();
+  const { basket } = useOrder();
+  const handleClick = () => {
+    navigate('/placeorder');
+  };
   return (
     <nav className="navbar bg-body-tertiary fixed-top">
       <div className="container-fluid d-flex align-items-center justify-content-between">
         {/* Left-aligned hamburger toggle */}
+
         <button
           className="navbar-toggler"
           type="button"
@@ -30,8 +37,26 @@ export default function Navbar({ onMenuClick }) {
         </div>
 
         {/* Font Awesome Basket Icon on the right side */}
-        <button className="btn btn-outline-secondary">
+        <button
+          className="btn btn-outline-secondary position-relative "
+          onClick={handleClick}
+        >
           <FontAwesomeIcon icon={faBasketShopping} size="lg" />
+          {basket.length > 0 ? (
+            <span
+              className="position-absolute top-0 start-100 translate-middle rounded-pill badge bg-danger"
+              style={{
+                padding: '0.3rem',
+                fontSize: '0.8rem',
+                minWidth: '1.5rem',
+                textAlign: 'center',
+              }}
+            >
+              {basket.length}
+            </span>
+          ) : (
+            ' '
+          )}
         </button>
 
         {/* Offcanvas Content */}
