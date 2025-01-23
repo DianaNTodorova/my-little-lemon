@@ -6,12 +6,13 @@ import {
   faTwitter,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import logo from '../images/The Little Lemon logo.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-light text-dark py-4">
+    <footer className="bg-light text-dark py-4 footer">
       <div className="container">
         <div className="row justify-content-between">
           {/* Logo and Brand */}

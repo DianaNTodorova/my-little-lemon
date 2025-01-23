@@ -7,14 +7,25 @@
 body {
   margin: 0;
   padding: 0 !important;
+  height: 100%;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 main {
   padding-top: 56px; /* Matches or exceeds header height */
   margin-top: 0;
+  flex-grow: 1;
+}
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  color: #004225;
+  position: absolute;
+  width: 100%;
 }
 
 section {

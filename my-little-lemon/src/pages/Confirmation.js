@@ -4,11 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import backgroundLemon from '../images/background_lemon.jpg';
 import Footer from './Footer';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export default function Confirmation() {
   const navigate = useNavigate();
   return (
-    <>
+    <div>
       <header>
         <Navbar></Navbar>
       </header>
@@ -36,7 +37,7 @@ export default function Confirmation() {
           </div>
         </div>
       </main>
-      <Footer />
-    </>
+      <Footer className="footer" />
+    </div>
   );
 }

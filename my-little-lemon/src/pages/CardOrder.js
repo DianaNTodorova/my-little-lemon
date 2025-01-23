@@ -23,7 +23,7 @@ export default function CardOrder({ data }) {
             <h5 className="card-title mt-3">{data.title}</h5>
             <p className="card-text mt-3">{data.description}</p>
             <p className="mt-2">
-              <strong>{data.price}</strong>
+              <strong>$ {data.price}</strong>
             </p>
           </div>
         </div>

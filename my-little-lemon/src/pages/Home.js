@@ -14,7 +14,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className='"d-flex flex-column min-vh-100'>
       <header>
         <Navbar onMenuClick={scrollToSectionTwo} />
       </header>
@@ -23,6 +23,6 @@ export default function Home() {
         <SectionTwo ref={sectionTwoRef} id="sectiontwo" />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
