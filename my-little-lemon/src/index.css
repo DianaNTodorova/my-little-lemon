@@ -13,13 +13,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
 }
+html,
+body {
+  height: 100%;
+}
 
 main {
-  padding-top: 56px; /* Matches or exceeds header height */
+  padding-top: 106px; /* Matches or exceeds header height */
   margin-top: 0;
   flex-grow: 1;
 }
-
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the wrapper takes full viewport height */
+}
 footer {
   background-color: #f8f9fa;
   text-align: center;

@@ -9,6 +9,7 @@ import Form from './pages/Form';
 import Confirmation from './pages/Confirmation';
 import SignIn from './pages/SignIn';
 import PlaceOrder from './pages/PlaceOrder';
+import OrderConfirmatio from './pages/OrderConfirmatio';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/placeorder" element={<PlaceOrder />} />
+        <Route path="/orderconfirmation" element={<OrderConfirmatio />} />
       </Routes>
     </OrderProvider>
   );
