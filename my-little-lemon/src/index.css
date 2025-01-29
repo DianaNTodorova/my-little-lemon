@@ -60,6 +60,9 @@ header {
   z-index: 1050;
   margin: 0;
 }
+.img-fluid {
+  height: 80px !important;
+}
 .card-img-overlay {
   display: flex;
   flex-direction: column;
@@ -174,6 +177,12 @@ header {
 }
 
 @media (max-width: 768px) {
+  main {
+    padding-top: 86px;
+  }
+  .img-fluid {
+    height: 60px !important;
+  }
   .card-title {
     font-size: 1rem; /* Adjusts text size */
   }
@@ -197,6 +206,12 @@ header {
   }
 }
 @media (max-width: 1024) {
+  main {
+    padding-top: 86px;
+  }
+  .img-fluid {
+    height: 70px !important;
+  }
   .card_flex {
     max-width: 70%;
   }

@@ -28,12 +28,7 @@ export default function Navbar({ onMenuClick }) {
 
         {/* Centered logo */}
         <div className="navbar-brand mx-auto">
-          <img
-            src={logo}
-            alt="Little Lemon Logo"
-            className="img-fluid"
-            style={{ height: '80px' }}
-          />
+          <img src={logo} alt="Little Lemon Logo" className="img-fluid" />
         </div>
 
         {/* Font Awesome Basket Icon on the right side */}
