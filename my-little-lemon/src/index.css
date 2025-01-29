@@ -163,10 +163,10 @@ header {
   flex-grow: 1; /* Ensures the text container fills available space */
 }
 
-.card img {
-  width: 100%;
-  height: auto; /* Keeps aspect ratio */
-  object-fit: cover; /* Prevents white space */
+.img-card {
+  width: 100% !important;
+  height: auto !important; /* Keeps aspect ratio */
+  object-fit: cover !important; /* Prevents white space */
 }
 .card-title_section {
   font-size: 2.25rem;
@@ -180,8 +180,13 @@ header {
   main {
     padding-top: 86px;
   }
+  .img-card {
+    width: 100% !important;
+    height: 18rem !important; /* Keeps aspect ratio */
+    object-fit: cover !important; /* Prevents white space */
+  }
   .img-fluid {
-    height: 60px !important;
+    height: 60px;
   }
   .card-title {
     font-size: 1rem; /* Adjusts text size */

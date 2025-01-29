@@ -14,7 +14,7 @@ export default function CardOrder({ data }) {
         <div className="col-md-4 d-flex align-items-stretch">
           <img
             src={data.image}
-            className="img-fluid rounded-start"
+            className="img-fluid rounded-start img-card"
             alt={data.title}
           />
         </div>
