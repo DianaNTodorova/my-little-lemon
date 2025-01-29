@@ -7,8 +7,8 @@ export default function Section() {
     <div className="card text-bg-light">
       <img src={backgroundLemon} className="card-img" alt="..." />
       <div className="card-img-overlay ">
-        <h5 className="card-title fs-1">Little Lemon </h5>
-        <p className="card-text fs-3">
+        <h5 className="card-title card-title_section">Little Lemon </h5>
+        <p className="card-text card-text_section ">
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist.
         </p>
