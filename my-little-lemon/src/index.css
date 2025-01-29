@@ -178,7 +178,7 @@ header {
 
 @media (max-width: 768px) {
   main {
-    padding-top: 86px;
+    padding-top: 66px;
   }
   .img-card {
     width: 100% !important;
@@ -186,14 +186,14 @@ header {
     object-fit: cover !important; /* Prevents white space */
   }
   .img-fluid {
-    height: 60px;
+    height: 45px !important;
   }
   .card-title {
     font-size: 1rem; /* Adjusts text size */
   }
 
   .card-text {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 
   .card-title_section {
@@ -207,7 +207,7 @@ header {
     max-width: 55%;
   }
   .card-img-overlay {
-    width: 25rem;
+    width: 20rem;
   }
 }
 @media (max-width: 1024) {
@@ -215,7 +215,7 @@ header {
     padding-top: 86px;
   }
   .img-fluid {
-    height: 70px !important;
+    height: 80px !important;
   }
   .card_flex {
     max-width: 70%;
