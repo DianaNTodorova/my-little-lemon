@@ -27,7 +27,7 @@ export default function OrderConfirmatio() {
             height={window.innerHeight}
             numberOfPieces={800}
             recycle={false}
-            colors={['#ff0', '#00ff00', '#ff0']}
+            colors={['#f4ce14', '#fff', '#f4ce14']}
           />
         )}
         <div className="card">
