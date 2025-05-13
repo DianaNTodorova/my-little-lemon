@@ -9,7 +9,7 @@ export default function CardOrder({ data }) {
   };
 
   return (
-    <div className="card mb-3 card_flex">
+    <div className="card-body flex-grow-1 d-flex flex-column">
       <div className="row g-0">
         <div className="col-md-4 d-flex align-items-stretch">
           <img
@@ -20,7 +20,7 @@ export default function CardOrder({ data }) {
         </div>
         <div className="col-md-8 d-flex align-items-center">
           <div className="card-body">
-            <h5 className="card-title">{data.title}</h5>
+            <h5 className="card-title p-1">{data.title}</h5>
             <p className="card-text">{data.description}</p>
             <p className="price">
               <strong>${data.price}</strong>

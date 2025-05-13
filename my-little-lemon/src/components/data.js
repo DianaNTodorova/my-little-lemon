@@ -18,6 +18,22 @@ const cardData = [
       'Our Chicken Lemon with Herbs features tender chicken marinated in a zesty lemon marinade. It’s grilled to perfection, ensuring a smoky flavor balanced with the brightness of fresh herbs. ',
     price: 14.99,
   },
+    {
+    id: 2,
+    image: chickenImage,
+    title: 'Chicken Lemon with Herbs',
+    description:
+      'Our Chicken Lemon with Herbs features tender chicken marinated in a zesty lemon marinade. It’s grilled to perfection, ensuring a smoky flavor balanced with the brightness of fresh herbs. ',
+    price: 14.99,
+  },
+    {
+    id: 2,
+    image: chickenImage,
+    title: 'Chicken Lemon with Herbs',
+    description:
+      'Our Chicken Lemon with Herbs features tender chicken marinated in a zesty lemon marinade. It’s grilled to perfection, ensuring a smoky flavor balanced with the brightness of fresh herbs. ',
+    price: 14.99,
+  },
 ];
 
 export default cardData;

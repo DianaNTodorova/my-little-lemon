@@ -100,7 +100,7 @@ export default function Navbar({ onMenuClick }) {
                   Menu
                 </button>
               </li>
-              <li>
+              {/*<li>
                 <Link className="nav-link active" to="/login">
                   Login
                 </Link>
@@ -109,7 +109,7 @@ export default function Navbar({ onMenuClick }) {
                 <Link className="nav-link active" to="/signin">
                   Sign In
                 </Link>
-              </li>
+              </li>*/}
             </ul>
 
             <form className="d-flex mt-3" role="search">

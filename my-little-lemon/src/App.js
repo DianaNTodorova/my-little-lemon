@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { OrderProvider } from './pages/OrderContext';
+import './index.css';
 import Home from './pages/Home';
 import About from './pages/About';
 import Login from './pages/Login';
@@ -20,8 +21,8 @@ function App() {
         <Route path="/form" element={<Form />} />
         <Route path="/confirmation" element={<Confirmation />} />
         <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signin" element={<SignIn />} />
+        {/*<Route path="/login" element={<Login />} />*
+        /*<Route path="/signin" element={<SignIn />} />*/}
         <Route path="/placeorder" element={<PlaceOrder />} />
         <Route path="/orderconfirmation" element={<OrderConfirmatio />} />
       </Routes>

@@ -49,15 +49,15 @@ export default function Reservation() {
       <header>
         <Navbar />
       </header>
-      <main className="mt-5">
+      <main className="mt-2">
         <SmallSection />
 
-        <section>
+        <section >
           <div
             id="carouselExampleDark"
             className="carousel carousel-dark slide"
           >
-            <div className="carousel-indicators">
+            <div className="carousel-indicators mt-5">
               <button
                 type="button"
                 data-bs-target="#carouselExampleDark"
@@ -135,7 +135,7 @@ export default function Reservation() {
                 <div className="container text-center py-5">
                   <div className="row justify-content-center">
                     <div className="col-10 col-md-6">
-                      <div className="d-flex justify-content-center mt-3">
+                      <div className="d-flex justify-content-center">
                         <DatePicker
                           selected={selectedDate}
                           onChange={(date) => setSelectedDate(date)}
@@ -164,7 +164,7 @@ export default function Reservation() {
                         {generateTimeButtons().map((time) => (
                           <Button
                             key={time}
-                            className="circular-button"
+                            className="circular-button p-0"
                             onClick={() => handleTimeClick(time)}
                           >
                             {time}
