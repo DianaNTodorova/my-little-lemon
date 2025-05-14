@@ -5,7 +5,13 @@ import NavigateButton from '../components/Button';
 export default function Section() {
   return (
     <div className="card text-bg-light">
-      <img src={backgroundLemon} className="card-img" alt="..." />
+      <img  className="card-img" alt="..."     
+            style={{
+              backgroundImage: `url(${backgroundLemon})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'top',
+              height: '66.666vh',
+            }}/>
       <div className='card-body'>
       <div className="card-img-overlay ">
         <h5 className="card-title card-title_section">The Little Lemon </h5>

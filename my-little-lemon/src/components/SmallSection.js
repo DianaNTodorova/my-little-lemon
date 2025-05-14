@@ -7,7 +7,7 @@ export default function SmallSection() {
       style={{
         backgroundImage: `url(${backgroundLemon})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'top',
         height: '300px',
       }}
     >

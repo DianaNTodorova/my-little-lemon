@@ -37,12 +37,15 @@ export default function PlaceOrder() {
         <div className="card wrapper">
           <div className="card">
             <img
-              src={backgroundLemon}
+             
               className="card-img"
               alt="..."
               style={{
-                position: 'relative',
-              }}
+                         backgroundImage: `url(${backgroundLemon})`,
+                         backgroundSize: 'cover',
+                         backgroundPosition: 'top',
+                         height: '66.666vh',
+                       }}
             />
             <div
               className="card-img-overlay d-flex align-items-center justify-content-center text-center"

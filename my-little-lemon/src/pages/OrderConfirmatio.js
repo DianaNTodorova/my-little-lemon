@@ -31,7 +31,13 @@ export default function OrderConfirmatio() {
           />
         )}
         <div className="card">
-          <img src={backgroundLemon} className="card-img" alt="..." />
+          <img  className="card-img" alt="..."    
+          style={{
+                        backgroundImage: `url(${backgroundLemon})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'top',
+                        height: '66.666vh',
+                      }}/>
           <div
             className="card-img-overlay d-flex align-items-center justify-content-center text-center"
             style={{
