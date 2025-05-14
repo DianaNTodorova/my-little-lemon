@@ -6,8 +6,9 @@ export default function Section() {
   return (
     <div className="card text-bg-light">
       <img src={backgroundLemon} className="card-img" alt="..." />
+      <div className='card-body'>
       <div className="card-img-overlay ">
-        <h5 className="card-title card-title_section">Little Lemon </h5>
+        <h5 className="card-title card-title_section">The Little Lemon </h5>
         <p className="card-text card-text_section ">
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist.
@@ -16,6 +17,7 @@ export default function Section() {
           <NavigateButton to="/reservation" label="Reserve table" />
         </p>
       </div>
+     </div>
     </div>
   );
 }

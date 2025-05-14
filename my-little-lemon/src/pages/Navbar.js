@@ -83,18 +83,18 @@ export default function Navbar({ onMenuClick }) {
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               {/* Use Link for navigation */}
               <li className="nav-item">
-                <Link className="nav-link active" to="/">
+                <Link className="nav-link active tangerine-bold fs-4" to="/">
                   Home
                 </Link>
               </li>
               <li>
-                <Link className="nav-link active" to="/about">
+                <Link className="nav-link active tangerine-bold fs-4" to="/about">
                   About
                 </Link>
               </li>
               <li>
                 <button
-                  className="nav-link active btn btn-link"
+                  className="nav-link active btn btn-link tangerine-bold fs-4 "
                   onClick={onMenuClick}
                 >
                   Menu
@@ -114,7 +114,7 @@ export default function Navbar({ onMenuClick }) {
 
             <form className="d-flex mt-3" role="search">
               <input
-                className="form-control me-2"
+                className="form-control me-2 tangerine-bold"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"

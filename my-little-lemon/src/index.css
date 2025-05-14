@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0 !important;
   height: 100%;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: "Cormorant Garamond", serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
@@ -32,7 +32,12 @@ body {
   font-style: normal;
 }
 
-
+.cormorant-garamond {
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+}
 main {
   padding-top: 106px; /* Matches or exceeds header height */
   margin-top: 0;
@@ -130,9 +135,9 @@ header {
   color: #fff !important; /* White text */
   border: none !important; /* No border */
   border-radius: 25px; /* Rounded corners */
-  padding: 12px 20px; /* Padding for size */
+  padding: 8px 16px; /* Padding for size */
   width: 180px; /* Wider button */
-  font-size: 16px; /* Font size */
+  font-size: 20px; /* Font size */
   font-weight: bold; /* Bold text */
   text-align: center; /* Center text */
   cursor: pointer; /* Pointer cursor on hover */
@@ -213,11 +218,11 @@ header {
     height: 45px !important;
   }
   .card-title {
-    font-size: 1rem; /* Adjusts text size */
+    font-size: 1.5rem; /* Adjusts text size */
   }
 
   .card-text {
-    font-size: 0.7rem;
+    font-size: 1.1rem;
   }
 
   .card-title_section {
@@ -234,7 +239,7 @@ header {
     width: 20rem;
   }
     .menu-title {
-  font-size: 5rem; 
+  font-size: 2.5rem; 
   }
   
 }
@@ -249,7 +254,7 @@ header {
     max-width: 70%;
   }
   .menu-title {
-  font-size: 6rem; 
+  font-size: 3rem; 
   }
   .card-title_section {
     font-size: 1.75rem;
