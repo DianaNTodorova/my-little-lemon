@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/my-little-lemon/static/css/main.8de0a5ce.css",
-    "main.js": "/my-little-lemon/static/js/main.b851dc21.js",
+    "main.css": "/my-little-lemon/static/css/main.80f3a974.css",
+    "main.js": "/my-little-lemon/static/js/main.e246dc51.js",
     "static/js/453.18c61744.chunk.js": "/my-little-lemon/static/js/453.18c61744.chunk.js",
     "static/media/chicken.jpg": "/my-little-lemon/static/media/chicken.60a3ee39060376084d87.jpg",
     "static/media/background-section.jpg": "/my-little-lemon/static/media/background-section.a2cbc6acb40d43c308e2.jpg",
     "static/media/background_lemon.jpg": "/my-little-lemon/static/media/background_lemon.02ab147482784357b50b.jpg",
     "static/media/cake.jpg": "/my-little-lemon/static/media/cake.5edf5279edee13be74bb.jpg",
+    "static/media/lemon-risotto.jpg": "/my-little-lemon/static/media/lemon-risotto.ab65bf805b8245275fb0.jpg",
+    "static/media/avocado-toast.jpg": "/my-little-lemon/static/media/avocado-toast.a522b4b4d607399f085b.jpg",
+    "static/media/lemon-pasta.jpg": "/my-little-lemon/static/media/lemon-pasta.1f7b5fd618b7f4f6851b.jpg",
+    "static/media/lemon-drinkjpg.jpg": "/my-little-lemon/static/media/lemon-drinkjpg.a27d2f67e08a88615e25.jpg",
     "static/media/The Little Lemon logo.png": "/my-little-lemon/static/media/The Little Lemon logo.50fdf378f7ad6f15471c.png",
     "index.html": "/my-little-lemon/index.html",
-    "main.8de0a5ce.css.map": "/my-little-lemon/static/css/main.8de0a5ce.css.map",
-    "main.b851dc21.js.map": "/my-little-lemon/static/js/main.b851dc21.js.map",
+    "main.80f3a974.css.map": "/my-little-lemon/static/css/main.80f3a974.css.map",
+    "main.e246dc51.js.map": "/my-little-lemon/static/js/main.e246dc51.js.map",
     "453.18c61744.chunk.js.map": "/my-little-lemon/static/js/453.18c61744.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8de0a5ce.css",
-    "static/js/main.b851dc21.js"
+    "static/css/main.80f3a974.css",
+    "static/js/main.e246dc51.js"
   ]
 }
