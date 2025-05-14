@@ -31,7 +31,7 @@ export default function OrderConfirmatio() {
           />
         )}
         <div className="card">
-          <img  className="card-img" alt="..."    
+          <div  className="card-img" alt="..."    
           style={{
                         backgroundImage: `url(${backgroundLemon})`,
                         backgroundSize: 'cover',
@@ -42,9 +42,8 @@ export default function OrderConfirmatio() {
             className="card-img-overlay d-flex align-items-center justify-content-center text-center"
             style={{
               position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
+              left: '25%',
+      
             }}
           >
             <h5 class="card-title fs-1">Thank you for your order!</h5>

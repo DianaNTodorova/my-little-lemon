@@ -36,7 +36,7 @@ export default function PlaceOrder() {
       <main>
         <div className="card wrapper">
           <div className="card">
-            <img
+            <div
              
               className="card-img"
               alt="..."

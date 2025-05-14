@@ -5,7 +5,7 @@ import NavigateButton from '../components/Button';
 export default function Section() {
   return (
     <div className="card text-bg-light">
-      <img  className="card-img" alt="..."     
+      <div  className="card-img" alt="..."    
             style={{
               backgroundImage: `url(${backgroundLemon})`,
               backgroundSize: 'cover',
