@@ -59,8 +59,8 @@ export default function Confirmation() {
               <Confetti active={showConfetti} config={confettiConfig} />
             </div>
 
-            <h5 className="card-title fs-1">Table Reserved!</h5>
-            <p className="card-text fs-3">
+            <h5 className="card-title">Table Reserved!</h5>
+            <p className="card-text">
               Thank you for your reservation in Little Lemon restaurant. You
               will receive email confirmation soon.
             </p>

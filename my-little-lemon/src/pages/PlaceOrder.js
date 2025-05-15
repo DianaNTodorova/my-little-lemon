@@ -37,31 +37,30 @@ export default function PlaceOrder() {
         <div className="card wrapper">
           <div className="card">
             <div
-             
               className="card-img"
-              alt="..."
               style={{
-                         backgroundImage: `url(${backgroundLemon})`,
-                         backgroundSize: 'cover',
-                         backgroundPosition: 'top',
-                         height: '66.666vh',
-                       }}
+                backgroundImage: `url(${backgroundLemon})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'top',
+                height: '100vh', // Adjust height as needed
+              }}
             />
             <div
               className="card-img-overlay d-flex align-items-center justify-content-center text-center"
               style={{
                 position: 'absolute',
-                //top: '0%',
                 left: '50%',
                 transform: 'translate(-50%, 0%)',
+                maxWidth: '80%', // Limit maximum width of the overlay
+                maxHeight: '100%', // Limit maximum height of the overlay
               }}
             >
-              <h5 className="card-title fs-1 mb-3">Finish Order</h5>
+              <h5 className="card-title  mb-2">Finish Order</h5>
               {basket.length === 0 ? (
-                <p className="card-text fs-3">No items in the basket!</p>
+                <p className="card-text">No items in the basket!</p>
               ) : (
                 <>
-                  <ul className="p-1 w-100 fs-4">
+                  <ul className="p-1 w-100 ">
                     {basket.map((item, index) => (
                       <li
                         key={index}
@@ -77,7 +76,6 @@ export default function PlaceOrder() {
                             marginLeft: '5px',
                           }}
                         >
-                          {/* Decrement Button */}
                           <button
                             className="btn main-button"
                             style={{
@@ -90,8 +88,6 @@ export default function PlaceOrder() {
                           >
                             -
                           </button>
-
-                          {/* Quantity Display */}
                           <input
                             type="text"
                             value={item.quantity}
@@ -107,8 +103,6 @@ export default function PlaceOrder() {
                               margin: 'auto',
                             }}
                           />
-
-                          {/* Increment Button */}
                           <button
                             className="btn main-button"
                             style={{
@@ -121,7 +115,7 @@ export default function PlaceOrder() {
                           >
                             +
                           </button>
-                        </div>{' '}
+                        </div>
                       </li>
                     ))}
                     <div>

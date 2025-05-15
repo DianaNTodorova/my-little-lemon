@@ -46,7 +46,7 @@ export default function OrderConfirmatio() {
       
             }}
           >
-            <h5 class="card-title fs-1">Thank you for your order!</h5>
+            <h5 class="card-title">Thank you for your order!</h5>
 
             <button className="main-button mt-3" onClick={() => navigate('/')}>
               <FontAwesomeIcon icon={faChevronLeft} />
